@@ -5,6 +5,7 @@ import { IconsModule } from '../icons/icons.module';
 import { TableLightComponent } from './components/table-light/table-light.component';
 import { ButtonRedirectionComponent } from './components/button-redirection/button-redirection.component';
 import { TotalPipe } from './pipes/total.pipe';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,7 @@ import { TotalPipe } from './pipes/total.pipe';
     TotalPipe
   ],
   imports: [
-    CommonModule
+    CommonModule, RouterModule
   ],
   exports: [TemplatesModule, IconsModule, TableLightComponent, ButtonRedirectionComponent, TotalPipe]
 })

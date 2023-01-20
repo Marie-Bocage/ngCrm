@@ -1,1 +1,18 @@
-<p>page-list-clients works!</p>
+<app-template-full-width title="Liste des clients">
+  <app-table-light [headers]="headers">
+    <tr *ngFor="let client of clients$">
+      <td>{{ client.name }}</td>
+      <td>{{ client.totalCaHt }}</td>
+      <td>{{ client.tva }}</td>
+      <td>
+        <select (change)="updateState(client, $event)">
+          <option *ngFor="let state of states" [value]="state" [selected]="state === client.state">
+            {{ state }}
+          </option>
+        </select>
+      </td>
+      <td>{{ client.comment }}</td>
+    </tr>
+  </app-table-light>
+</app-template-full-width>
+<app-button-redirection redirection="add" nomLabel="Ajouter client"></app-button-redirection>

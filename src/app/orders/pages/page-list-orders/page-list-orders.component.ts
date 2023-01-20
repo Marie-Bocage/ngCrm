@@ -14,8 +14,8 @@ export class PageListOrdersComponent {
   public headers: string[];
   public orders$!: Observable<Order[]>;
   public states: string[];
-  public redirection!: string;
-  public nomLabel!: string;
+  // public redirection!: string;
+  // public nomLabel!: string;
 
   constructor(private ordersService: OrdersService) {
     this.orders$ = this.ordersService.collection$;

@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { StateOrder } from '../../enums/state-order';
 import { Order } from '../../models/order';
 
@@ -7,13 +8,28 @@ import { Order } from '../../models/order';
   templateUrl: './form-order.component.html',
   styleUrls: ['./form-order.component.scss']
 })
-export class FormOrderComponent {
+export class FormOrderComponent implements OnInit {
   @Input() public init!: Order;
 
+  public form!: FormGroup;
   public states: string[];
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
     this.states = Object.values(StateOrder);
+    console.log(this.init);
+  }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      typePresta: [this.init.typePresta],
+      client: [this.init.client],
+      nbJours: [this.init.nbJours],
+      tjmHt: [this.init.tjmHt],
+      tva: [this.init.tva],
+      state: [this.init.state],
+      comment: [this.init.comment],
+      id: [this.init.id]
+    })
   }
 
 }

@@ -6,6 +6,7 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { ButtonRedirectionComponent } from './components/button-redirection/button-redirection.component';
 import { TotalPipe } from './pipes/total.pipe';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +19,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule, RouterModule
   ],
-  exports: [TemplatesModule, IconsModule, TableLightComponent, ButtonRedirectionComponent, TotalPipe]
+  exports: [TemplatesModule, IconsModule, TableLightComponent, ButtonRedirectionComponent, TotalPipe, ReactiveFormsModule]
 })
 export class SharedModule { }

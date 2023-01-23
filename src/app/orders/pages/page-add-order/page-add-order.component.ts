@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Order } from '../../models/order';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'app-page-add-order',
@@ -9,7 +11,13 @@ import { Order } from '../../models/order';
 export class PageAddOrderComponent {
   public order: Order;
 
-  constructor() {
+  constructor(private orderService: OrdersService, private router: Router) {
     this.order = new Order();
+  }
+
+  public action(order: Order): void {
+    this.orderService.add(order).subscribe(() => {
+      this.router.navigate(['orders'])
+    });
   }
 }

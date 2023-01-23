@@ -1,5 +1,5 @@
-<app-template-full-width title="Ajouter une commande">
-  <app-form-order [init]="order"></app-form-order>
-</app-template-full-width>
+<app-template-container title="Ajouter une commande">
+  <app-form-order [init]="order" (submitted)="action($event)"></app-form-order>
+</app-template-container>
 
 

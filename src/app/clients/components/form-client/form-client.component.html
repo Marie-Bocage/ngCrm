@@ -1,1 +1,34 @@
-<p>form-client works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input type="text" class="form-control" id="name" formControlName="name">
+  </div>
+
+  <div class="form-group">
+    <label for="totalCaHt">Chiffre d'Affaire</label>
+    <input type="number" class="form-control" id="totalCaHt" formControlName="totalCaHt">
+  </div>
+
+  <div class="form-group">
+    <label for="tva">TVA</label>
+    <input type="number" class="form-control" id="tva" formControlName="tva">
+  </div>
+
+  <div class="form-group">
+    <label for="state">Etat</label>
+    <select class="form-control" id="state" formControlName="state">
+      <option *ngFor="let state of states" [value]="state">
+        {{ state }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Commentaire</label>
+    <textarea class="form-control" id="comment" formControlName="comment">
+    </textarea>
+  </div>
+
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

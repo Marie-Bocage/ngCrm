@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     TableLightComponent,
@@ -17,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TotalPipe
   ],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, IconsModule
   ],
   exports: [TemplatesModule, IconsModule, TableLightComponent, ButtonRedirectionComponent, TotalPipe, ReactiveFormsModule]
 })

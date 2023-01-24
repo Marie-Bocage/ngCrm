@@ -33,4 +33,8 @@ export class OrdersService {
   public add(order: Order): Observable<Order> {
     return this.httpClient.post<Order>(`${this.urlApi}/orders`, order);
   }
+
+  public getItemById(id: String): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
 }

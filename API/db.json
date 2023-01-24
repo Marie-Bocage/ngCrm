@@ -1,12 +1,12 @@
 {
   "orders": [
     {
-      "tjmHt": 1200,
+      "typePresta": "Coaching",
+      "client": "Capgemini2",
       "nbJours": 20,
+      "tjmHt": 500,
       "tva": 20,
       "state": "CANCELED",
-      "typePresta": "formation",
-      "client": "Capgemini2",
       "comment": "Merci Cap pour les 24k",
       "id": 1
     },
@@ -51,12 +51,12 @@
       "id": 5
     },
     {
-      "typePresta": "aaa",
-      "client": "aaaaa",
+      "typePresta": "bbbb",
+      "client": "bbbbbbb",
       "nbJours": 1,
       "tjmHt": 1190,
       "tva": 20,
-      "state": "OPTION",
+      "state": "CONFIRMED",
       "comment": "aaaaa",
       "id": 6
     },

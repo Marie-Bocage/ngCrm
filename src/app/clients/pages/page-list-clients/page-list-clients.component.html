@@ -14,7 +14,7 @@
       <td>{{ client.comment }}</td>
       <td>
         <app-icon-edit (click)="goToEdit(client.id)"></app-icon-edit>
-        <app-icon-delete></app-icon-delete>
+        <app-icon-delete (click)="goToDelete(client.id)"></app-icon-delete>
       </td>
     </tr>
   </app-table-light>

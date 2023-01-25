@@ -35,4 +35,8 @@ export class ClientsService {
   public getItemById(id: any): Observable<Client> {
     return this.httpClient.get<Client>(`${this.urlApi}/clients/${id}`);
   }
+
+  public delete(id: any): Observable<Client> {
+    return this.httpClient.delete<Client>(`${this.urlApi}/clients/${id}`);
+  }
 }

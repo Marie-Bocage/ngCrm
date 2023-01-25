@@ -37,5 +37,11 @@ export class PageListClientsComponent {
   public goToEdit(id: any): void {
     this.router.navigate(['clients/edit/' + id]);
   }
+
+  public goToDelete(id: any): void {
+    this.clientService.delete(id).subscribe(() => {
+      location.reload();
+    })
+  }
 }
 

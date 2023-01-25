@@ -91,14 +91,6 @@
       "tva": 20,
       "state": "ACTIVE",
       "comment": "test test"
-    },
-    {
-      "id": 6,
-      "name": "test",
-      "totalCaHt": 1000,
-      "tva": 20,
-      "state": "INACTIVE",
-      "comment": null
     }
   ]
 }

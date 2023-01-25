@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { ngbCarouselTransitionOut } from '@ng-bootstrap/ng-bootstrap/carousel/carousel-transition';
+import { map, Observable, Subscription, switchMap } from 'rxjs';
+import { FormOrderComponent } from '../../components/form-order/form-order.component';
 import { StateOrder } from '../../enums/state-order';
 import { Order } from '../../models/order';
 import { OrdersService } from '../../services/orders.service';
@@ -15,30 +17,28 @@ export class PageListOrdersComponent {
   public headers: string[];
   public orders$!: Observable<Order[]>;
   public states: string[];
-  // public redirection!: string;
-  // public nomLabel!: string;
 
   constructor(private ordersService: OrdersService, private router: Router, private route: ActivatedRoute) {
     this.orders$ = this.ordersService.collection$;
     this.states = Object.values(StateOrder);
-    this.headers = ['Type', 'Client', 'Jours', 'Tjm HT', 'Total HT', 'Total TTC', 'State', 'Action']
-
-
-
-    // this.ordersService.collection$.subscribe((data) => {
-    //   this.orders = data;
-    // });
+    this.headers = ['Type', 'Client', 'Jours', 'Tjm HT', 'Total HT', 'Total TTC', 'State', 'Actions']
   }
 
   public changeState(order: Order, event: any): void {
     const state = event.target.value;
     this.ordersService.changeState(order, state).subscribe((data) => {
       Object.assign(order, data);
-      console.log(order)
     })
   }
 
-  public goToEdit(id: number) {
+  public goToEdit(id: any): void {
     this.router.navigate(['orders/edit/' + id])
   }
+
+  public goToDelete(id: any): void {
+    this.ordersService.deleteById(id).subscribe(() => {
+      location.reload();
+    })
+  }
 }
+

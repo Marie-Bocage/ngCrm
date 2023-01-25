@@ -15,7 +15,10 @@
           </option>
         </select>
       </td>
-      <td><app-icon-edit (click)="goToEdit(order.id)"></app-icon-edit></td>
+      <td>
+        <app-icon-edit (click)="goToEdit(order.id)"></app-icon-edit>
+        <app-icon-delete (click)="goToDelete(order.id)"></app-icon-delete>
+      </td>
     </tr>
   </app-table-light>
   <!-- <app-button-redirection nomLabel="orders" redirection="http://localhost:4200/clients">Voir clients</app-button-redirection> -->

@@ -49,26 +49,6 @@
       "client": "Modis",
       "comment": "Merci Modis pour les 10k",
       "id": 5
-    },
-    {
-      "typePresta": "bbbb",
-      "client": "bbbbbbb",
-      "nbJours": 1,
-      "tjmHt": 1190,
-      "tva": 20,
-      "state": "CONFIRMED",
-      "comment": "aaaaa",
-      "id": 6
-    },
-    {
-      "typePresta": "zzzz",
-      "client": "zzzzzz",
-      "nbJours": 1,
-      "tjmHt": 5000,
-      "tva": 20,
-      "state": "OPTION",
-      "comment": "zzzz",
-      "id": 7
     }
   ],
   "clients": [

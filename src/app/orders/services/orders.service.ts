@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { StateOrder } from '../enums/state-order';
 import { Order } from '../models/order';
@@ -36,5 +36,9 @@ export class OrdersService {
 
   public getItemById(id: String): Observable<Order> {
     return this.httpClient.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
+
+  public deleteById(id: String): Observable<Order> {
+    return this.httpClient.delete<Order>(`${this.urlApi}/orders/${id}`);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StateClient } from '../../enums/state-client';
 import { Client } from '../../models/client';
@@ -15,8 +16,8 @@ export class PageListClientsComponent {
   public clients$!: Client[];
   public states: string[];
 
-  constructor(private clientService: ClientsService) {
-    this.headers = ['Nom', 'CA', 'TVA', 'Etat', 'Commentaire']
+  constructor(private clientService: ClientsService, private router: Router) {
+    this.headers = ['Nom', 'CA', 'TVA', 'Etat', 'Commentaire', 'Actions']
 
     this.states = Object.values(StateClient);
 
@@ -31,6 +32,10 @@ export class PageListClientsComponent {
     this.clientService.changeState(client, state).subscribe((data) => {
       Object.assign(client, data)
     })
+  }
+
+  public goToEdit(id: any): void {
+    this.router.navigate(['clients/edit/' + id]);
   }
 }
 

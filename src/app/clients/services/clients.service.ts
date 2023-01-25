@@ -31,4 +31,8 @@ export class ClientsService {
   public add(client: Client): Observable<Client> {
     return this.httpClient.post<Client>(`${this.urlApi}/clients`, client);
   }
+
+  public getItemById(id: any): Observable<Client> {
+    return this.httpClient.get<Client>(`${this.urlApi}/clients/${id}`);
+  }
 }
